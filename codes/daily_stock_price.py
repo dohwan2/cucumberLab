@@ -45,7 +45,7 @@ def mongo_connection():
         #지금 넣으려는 날짜의 기존 데이터에 없는 경우에만
         if data[-1]['date'] != new_data['date']:
             #제일 오래 된 날짜는 제외
-            data = data[1:]
+            #data = data[1:] #굳이 안 지워도 될 것 같아서 주석처리함
             data.append(new_data)
             collection.update_one({'_id':doc['_id']}, {'$set': {'data': data}})
 
