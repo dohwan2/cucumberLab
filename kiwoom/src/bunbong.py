@@ -32,7 +32,7 @@ if __name__ == "__main__":
     stock_code = stock_code[['종목코드', '기업명']]
 
     #중간에 종료되었을 때 이미 쌓은 종목은 스킵하기 위함
-    skipcnt = 458 + 1 #021820 못쌓음
+    skipcnt = 784 + 3 #021820, 012170, 007630 못쌓음
     cnt = 0
     for index, row in stock_code.iterrows():
         cnt += 1
