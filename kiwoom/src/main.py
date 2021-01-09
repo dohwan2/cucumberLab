@@ -74,19 +74,11 @@ if __name__ == "__main__":
         originOrderNo="",
     )
     count = 1
-    # for i in range(count):
-    #     executor.sendOrder(**orderSpecDict)  # 삼성전자 1주 신규매수(시장가) 주문 제출
-    #     print(i)
-        # time.sleep(1)
-    #time.sleep(1)
-    params = {
-        "종목코드": "005930",
-        "틱범위": 1,  # 0 연속조회여부 (0: x)
-        "수정주가구분": 1,  # 종목코드 갯수
-    }
+    for i in range(count):
+        executor.sendOrder(**orderSpecDict)  # 삼성전자 1주 신규매수(시장가) 주문 제출
+        print(i)
+        time.sleep(1)
+    time.sleep(1)
 
-    data = feeder.request(trCode="OPT10080", **params)
-    print(data)
-
-    #feeder.getAccountDict(feeder.accNo)
+    feeder.getAccountDict(feeder.accNo)
     #s8576791
